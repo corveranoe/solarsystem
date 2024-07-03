@@ -1,26 +1,21 @@
-body{
+body {
     margin: 0;
     height: 100vh;
     display: flex;
     align-items: center;
-    background-color: black;
+    background: linear-gradient(to bottom right, #000000, #080808);
     overflow: hidden;
+    font-family: 'Arial', sans-serif;
 }
-.header{
-    color: white;
-    font-size: 16px;
-    position: absolute;
-    bottom: 0;
-    height: 20px;
-    align-items: center;
-}
-.container{
+
+.container {
     font-size: 10px;
     width: 40em;
     height: 50em;
     position: relative;
 }
-.sun{
+
+.sun {
     position: absolute;
     top: 15em;
     left: 15em;
@@ -28,52 +23,59 @@ body{
     height: 10em;
     background-color: yellow;
     border-radius: 50%;
-    box-shadow: 0 0 3em white;
+    box-shadow: 0 0 3em rgba(255, 255, 255, 0.5);
 }
-.earth, .moon{
+
+.earth, .moon {
     position: absolute;
     border-style: solid;
-    border-color: white transparent transparent transparent;
+    border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent;
     border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
 }
-.earth{
+
+.earth {
     top: 5em;
     left: 5em;
     width: 30em;
     height: 30em;
     animation: orbit 36.5s linear infinite;
+    box-shadow: 0 0 1em rgba(255, 255, 255, 0.2);
 }
-.moon{
+
+.moon {
     top: 0;
     right: 0;
     width: 8em;
     height: 8em;
     animation: orbit 2.7s linear infinite;
+    box-shadow: 0 0 0.5em rgba(255, 255, 255, 0.2);
 }
-.earth::before, .moon::before{
+
+.earth::before, .moon::before {
     content: '';
     position: absolute;
     border-radius: 50%;
 }
-.earth::before{
+
+.earth::before {
     top: 2.8em;
     right: 2.8em;
     width: 3em;
     height: 3em;
-    background-color: rgb(11, 213, 248);
+    background-color: rgba(11, 213, 248, 0.8);
 }
-.moon::before{
+
+.moon::before {
     top: 0.8em;
     right: 0.2em;
     width: 1.2em;
     height: 1.2em;
-    background-color: silver;
+    background-color: rgba(192, 192, 192, 0.8);
 }
+
 @keyframes orbit {
-    to{
-        transform: rotate(
-            360deg
-        );
-    };
+    to {
+        transform: rotate(360deg);
+    }
 }
